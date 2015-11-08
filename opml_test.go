@@ -15,6 +15,7 @@ import (
 
 // http://dev.opml.org/examples/specification.opml
 var specification = &OPML{
+	Version:         "1.0",
 	Title:           "specification.xml",
 	DateCreated:     parseTime("Thu, 27 Jul 2000 01:20:06 GMT"),
 	DateModified:    parseTime("Fri, 15 Sep 2000 09:04:03 GMT"),
@@ -65,6 +66,7 @@ var specification = &OPML{
 
 // http://dev.opml.org/examples/presentation.opml
 var presentation = &OPML{
+	Version:         "1.0",
 	Title:           "presentation.xml",
 	DateCreated:     parseTime("Thu, 27 Jul 2000 01:35:52 GMT"),
 	DateModified:    parseTime("Fri, 15 Sep 2000 09:05:37 GMT"),
@@ -241,6 +243,7 @@ var presentation = &OPML{
 
 // http://hosting.opml.org/dave/spec/subscriptionList.opml
 var subscriptionList = &OPML{
+	Version:         "2.0",
 	Title:           "mySubscriptions.opml",
 	DateCreated:     parseTime("Sat, 18 Jun 2005 12:11:52 GMT"),
 	DateModified:    parseTime("Tue, 02 Aug 2005 21:42:48 GMT"),
@@ -388,6 +391,7 @@ var subscriptionList = &OPML{
 
 // http://hosting.opml.org/dave/spec/states.opml
 var states = &OPML{
+	Version:         "2.0",
 	Title:           "states.opml",
 	DateCreated:     parseTime("Tue, 15 Mar 2005 16:35:45 GMT"),
 	DateModified:    parseTime("Thu, 14 Jul 2005 23:41:05 GMT"),
@@ -508,6 +512,7 @@ var states = &OPML{
 
 // http://hosting.opml.org/dave/spec/simpleScript.opml
 var simpleScript = &OPML{
+	Version:         "2.0",
 	Title:           "workspace.userlandsamples.doSomeUpstreaming",
 	DateCreated:     parseTime("Mon, 11 Feb 2002 22:48:02 GMT"),
 	DateModified:    parseTime("Sun, 30 Oct 2005 03:30:17 GMT"),
@@ -558,6 +563,7 @@ var simpleScript = &OPML{
 
 // http://hosting.opml.org/dave/spec/placesLived.opml
 var placesLived = &OPML{
+	Version:         "2.0",
 	Title:           "placesLived.opml",
 	DateCreated:     parseTime("Mon, 27 Feb 2006 12:09:48 GMT"),
 	DateModified:    parseTime("Mon, 27 Feb 2006 12:11:44 GMT"),
@@ -622,6 +628,7 @@ var placesLived = &OPML{
 
 // http://hosting.opml.org/dave/spec/directory.opml
 var directory = &OPML{
+	Version:         "2.0",
 	Title:           "scriptingNewsDirectory.opml",
 	DateCreated:     parseTime("Thu, 13 Oct 2005 15:34:07 GMT"),
 	DateModified:    parseTime("Tue, 25 Oct 2005 21:33:57 GMT"),
@@ -684,6 +691,7 @@ var directory = &OPML{
 
 // http://hosting.opml.org/dave/spec/category.opml
 var category = &OPML{
+	Version:     "2.0",
 	Title:       "Illustrating the category attribute",
 	DateCreated: parseTime("Mon, 31 Oct 2005 19:23:00 GMT"),
 	Outlines: []*Outline{

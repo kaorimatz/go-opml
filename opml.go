@@ -11,13 +11,14 @@ import (
 
 type xmlOPML struct {
 	XMLName xml.Name `xml:"opml"`
+	Version string   `xml:"version,attr"`
 	Head    xmlHead  `xml:"head"`
 	Body    xmlBody  `xml:"body"`
 }
 
 func (xo *xmlOPML) ToOPML() *OPML {
 	o := &OPML{
-		Version:         xo.Head.Version,
+		Version:         xo.Version,
 		Title:           xo.Head.Title,
 		OwnerName:       xo.Head.OwnerName,
 		OwnerEmail:      xo.Head.OwnerEmail,
@@ -49,8 +50,8 @@ func (xo *xmlOPML) ToOPML() *OPML {
 }
 
 func (xo *xmlOPML) FromOPML(o *OPML) {
+	xo.Version = o.Version
 	xo.Head = xmlHead{
-		Version:         o.Version,
 		Title:           o.Title,
 		OwnerName:       o.OwnerName,
 		OwnerEmail:      o.OwnerEmail,
@@ -81,7 +82,6 @@ func (xo *xmlOPML) FromOPML(o *OPML) {
 }
 
 type xmlHead struct {
-	Version         string             `xml:"version,attr"`
 	Title           string             `xml:"title,omitempty"`
 	DateCreated     *xmlTime           `xml:"dateCreated,omitempty"`
 	DateModified    *xmlTime           `xml:"dateModified,omitempty"`
