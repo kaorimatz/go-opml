@@ -2,8 +2,6 @@ package opml
 
 import (
 	"bytes"
-	"code.google.com/p/go-charset/charset"
-	_ "code.google.com/p/go-charset/data"
 	"io"
 	"net/url"
 	"os"
@@ -11,6 +9,8 @@ import (
 	"reflect"
 	"testing"
 	"time"
+
+	"golang.org/x/net/html/charset"
 )
 
 // http://dev.opml.org/examples/specification.opml
@@ -824,6 +824,6 @@ func openTestData(filename string) io.Reader {
 
 func parseOPML(r io.Reader) (*OPML, error) {
 	parser := NewParser(r)
-	parser.XMLDecoder.CharsetReader = charset.NewReader
+	parser.XMLDecoder.CharsetReader = charset.NewReaderLabel
 	return parser.Parse()
 }
